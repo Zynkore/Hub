@@ -1,3 +1,4 @@
+-- By Claude
 local TweenModule = {}
 local GM = nil
 local TS = nil
@@ -37,7 +38,7 @@ function TweenModule:TweenTo(Config)
 	local info = TweenInfo.new(dist / TweenSpeed, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
 	GM:new('BodyVelocity', {
 		Name = 'StabDontDelete',
-		Velocity = Vector3.one * math.huge,
+		Velocity = Vector3.one,
 		MaxForce = Vector3.one * math.huge,
 		Parent = HRP
 	})
