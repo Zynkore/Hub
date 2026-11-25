@@ -6,11 +6,15 @@ for _, table in pairs({
       Id = {
         1 = "Sea1.luau" -- GameId, game url
       },
-      url = "Blox%20fruits"
+      url = "Blox%20fruits/"
     }
 }) do
   if typeof(table.Id) == "table" then
-    
+    for GameId, Path in pairs(Id) do
+      if PlaceId == GameId then
+        loadstring(game:HttpGet(`{BaseUrl}{table.url}{Path}`))()
+      end
+    end
   elseif typeof(table.Id) == "number" then
     
   end
