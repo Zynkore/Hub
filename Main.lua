@@ -10,12 +10,16 @@ for _, table in pairs({
     }
 }) do
   if typeof(table.Id) == "table" then
-    for GameId, Path in pairs(Id) do
+    for GameId, Path in pairs(table.Id) do
       if PlaceId == GameId then
         loadstring(game:HttpGet(`{BaseUrl}{table.url}{Path}`))()
+        return
       end
     end
   elseif typeof(table.Id) == "number" then
-    
+    if PlaceId == table.Id then
+      loadstring(game:HttpGet(`{BaseUrl}{table.url}`))()
+      return
+    end
   end
 end
