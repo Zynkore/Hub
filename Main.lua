@@ -4,10 +4,14 @@ local BaseUrl = "https://raw.githubusercontent.com/Zynkore/Hub/refs/heads/" .. b
 for _, table in pairs({
     {
       Id = {
-        1 = "Sea1.lua" -- GameId, game url
+        1 = "Sea1.luau" -- GameId, game url
       },
       url = "Blox%20fruits"
     }
 }) do
-  
+  if typeof(table.Id) == "table" then
+    
+  elseif typeof(table.Id) == "number" then
+    
+  end
 end
