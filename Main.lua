@@ -4,7 +4,7 @@ local BaseUrl = "https://raw.githubusercontent.com/Zynkore/Hub/refs/heads/" .. b
 for _, table in pairs({
     {
       Id = {
-        85211729168715 = "Sea1.luau" -- GameId, game url
+        [85211729168715] = "Sea1.luau" -- GameId, game url
       },
       url = "Blox%20fruits/"
     }
