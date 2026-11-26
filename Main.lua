@@ -17,6 +17,11 @@ for _, table in pairs({
       end
     end
   elseif typeof(table.Id) == "number" then
+    if PlaceId == table.Id then
+      loadstring(game:HttpGet(`{BaseUrl}{table.url}`))()
+      return
+    end
+  elseif typeof(table.Id) == "string" then
     if PlaceId == tonumber(table.Id) then
       loadstring(game:HttpGet(`{BaseUrl}{table.url}`))()
       return
