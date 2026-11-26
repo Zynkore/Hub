@@ -26,13 +26,13 @@ function Module:TweenTo(Config)
             return
           end
           if TweenInst then
-            if TempInstance and TempInstance.Parent == Target then
-              local OldTween = TweenInst
-              TweenInst = nil
-              OldTween:Cancel()
-            else
-              Module:StopTween()
-            end
+            local OldTween = TweenInst
+            TweenInst = nil
+            OldTween:Cancel()
+          end
+          if TempInstance ~= nil and TempInstance.Parent ~= Target then
+            TempInstance:Destroy()
+            TempInstance = nil
           end
           local ThisTween = TweenService:Create(
             Target,
@@ -52,7 +52,7 @@ function Module:TweenTo(Config)
           ThisTween.Completed:Connect(function()
             if TweenInst == ThisTween then
               TweenInst = nil
-              Module:StopTween()
+              TweenAc = false
             end
           end)
           ThisTween:Play()
