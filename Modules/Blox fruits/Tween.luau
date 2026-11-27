@@ -51,7 +51,6 @@ function Module:TweenTo(Config)
           TweenAc = true
           ThisTween.Completed:Connect(function()
             if TweenInst == ThisTween then
-              TweenInst = nil
               TweenAc = false
             end
           end)
