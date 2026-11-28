@@ -108,7 +108,7 @@ function Module:GetMon(MyLevel)
       MonCFrame = CFrame.new(-5399.53662, 510.711365, -279.90683, 0.567566276, -1.5923689e-08, -0.82332772, -1.15979903e-09, 1, -2.01401598e-08, 0.82332772, 1.23857697e-08, 0.567566276),
       MonName = "Dark Master"
     }
-  elseif MyLevel >= 190 and MyLevel >= 209 then
+  elseif MyLevel >= 190 and MyLevel <= 209 then
     return {
       QuestName = "PrisonerQuest",
       QuestLevel = 1,
