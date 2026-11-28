@@ -128,12 +128,12 @@ function Module:GetMon(MyLevel)
     }
   elseif MyLevel >= 250 then
     return {
-      QuestName = "",
+      QuestName = "ColosseumQuest",
       QuestLevel = 1,
-      QuestTitle = "",
+      QuestTitle = "Defeat 7 Toga Warriors",
       QuestCFrame = CFrame.new(-1343.02209, 12.55336, -2924.4126, 0.97120893, -1.63282579e-08, -0.23822929, 3.20847882e-08, 1, 6.22626004e-08, 0.23822929, -6.8113529e-08, 0.97120893),
       MonCFrame = CFrame.new(-1708.90271, 21.6818638, -2814.16919, -0.999842107, 9.371945e-09, 0.0177696608, 9.98724303e-09, 1, 3.45375675e-08, -0.0177696608, 3.47095863e-08, -0.999842107),
-      MonName = ""
+      MonName = "Toga Warrior"
     }
   end
 end
