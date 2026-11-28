@@ -92,12 +92,12 @@ function Module:GetMon(MyLevel)
     }
   elseif MyLevel >= 150 then
     return {
-      QuestName = "",
+      QuestName = "SkyQuest",
       QuestLevel = 1,
-      QuestTitle = "Defeat ",
+      QuestTitle = "Defeat 7 Sky Bandits",
       QuestCFrame = CFrame.new(-5402.5625, 410.802032, -696.504333, -0.656015694, -5.43260725e-08, 0.754747272, -3.72416338e-08, 1, 3.96092545e-08, -0.754747272, -2.12372986e-09, -0.656015694),
-      MonCFrame = ,
-      MonName = ""
+      MonCFrame = CFrame.new(-5119.0459, 375.269836, -1089.03052, -0.99984628, -2.55593626e-08, 0.0175328515, -2.47454786e-08, 1, 4.6637421e-08, -0.0175328515, 4.61963943e-08, -0.99984628),
+      MonName = "Sky Bandit"
     }
   end
 end
