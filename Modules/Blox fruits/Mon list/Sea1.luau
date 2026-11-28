@@ -45,7 +45,7 @@ function Module:GetMon(MyLevel)
       MonCFrame = CFrame.new(-1209.59839, 32.7910347, 4351.46436, -0.772964776, 1.22627721e-08, -0.634448946, 8.29626234e-09, 1, 9.22068466e-09, 0.634448946, 1.86370963e-09, -0.772964776),
       MonName = "Brute"
     }
-  elseif MyLevel >= 60 then
+  elseif MyLevel >= 60 and MyLevel <= 74 then
     return {
       QuestName = "DesertQuest",
       QuestLevel = 1,
@@ -53,6 +53,15 @@ function Module:GetMon(MyLevel)
       QuestCFrame = CFrame.new(918.621643, 5.97015429, 4205.06396, 0.460304826, 3.51166527e-08, -0.887760937, -9.5817585e-09, 1, 3.45882789e-08, 0.887760937, -7.41484163e-09, 0.460304826),
       MonCFrame = CFrame.new(849.709167, 24.5362835, 4492.87354, -0.396440089, -1.30420768e-08, -0.918060601, 2.91968205e-09, 1, -1.54669042e-08, 0.918060601, -8.81214568e-09, -0.396440089),
       MonName = "Desert Bandit"
+    }
+  elseif MyLevel >= 75 then
+    return {
+      QuestName = "DesertQuest",
+      QuestLevel = 2,
+      QuestTitle = "Defeat 6 Desert Officers",
+      QuestCFrame = CFrame.new(918.621643, 5.97015429, 4205.06396, 0.460304826, 3.51166527e-08, -0.887760937, -9.5817585e-09, 1, 3.45882789e-08, 0.887760937, -7.41484163e-09, 0.460304826),
+      MonCFrame = CFrame.new(1604.82422, 32.2997437, 4084.09985, -0.695431113, 1.08753611e-08, 0.718592763, -2.8935343e-09, 1, -1.79345179e-08, -0.718592763, -1.45514951e-08, -0.695431113),
+      MonName = "Desert Officer"
     }
   end
 end
