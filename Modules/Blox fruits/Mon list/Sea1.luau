@@ -47,7 +47,7 @@ function Module:GetMon(MyLevel)
     }
   elseif MyLevel >= 60 then
     return {
-      QuestName = "",
+      QuestName = "DesertQuest",
       QuestLevel = 1,
       QuestTitle = "Defeat 8 Desert Bandits",
       QuestCFrame = CFrame.new(918.621643, 5.97015429, 4205.06396, 0.460304826, 3.51166527e-08, -0.887760937, -9.5817585e-09, 1, 3.45882789e-08, 0.887760937, -7.41484163e-09, 0.460304826),
