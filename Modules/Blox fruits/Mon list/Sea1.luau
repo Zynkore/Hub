@@ -83,12 +83,12 @@ function Module:GetMon(MyLevel)
     }
   elseif MyLevel >= 120 then
     return {
-      QuestName = "",
+      QuestName = "MarineQuest2",
       QuestLevel = 1,
-      QuestTitle = "Defeat 8 Chief Parry Officers",
+      QuestTitle = "Defeat 8 Chief Perry Officers",
       QuestCFrame = CFrame.new(-4698.49756, 5.95408297, 4223.32764, -0.984895825, 9.75294956e-10, 0.173147887, 1.73589931e-09, 1, 4.24137481e-09, -0.173147887, 4.4778794e-09, -0.984895825),
       MonCFrame = CFrame.new(-4824.21973, 25.3921242, 4270.5376, 0.513733923, 6.91611461e-08, -0.857949555, -3.53673428e-08, 1, 5.94344272e-08, 0.857949555, -1.90084143e-10, 0.513733923),
-      MonName = ""
+      MonName = "Chief Perry Officer"
     }
   end
 end
