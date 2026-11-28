@@ -1,9 +1,11 @@
 local Module = {}
 local TweenService = game:GetService("TweenService")
+local RunService = game:GetService("RunService")
 
 local TweenAc = false
 local TweenInst = nil
-local TempInstance = nil
+local HoldTarget = nil
+local HoldConnection = nil
 function Module:TweenTo(Config)
   if typeof(Config) == "table" then
     local Target = Config[1] or Config.Target
@@ -21,6 +23,29 @@ function Module:TweenTo(Config)
             Goal = {Position = TargetPos}
             Position = TargetPos
           end
+          if HoldTarget ~= Target then
+            local OldBV = HoldTarget and HoldTarget:FindFirstChild("TweenBV")
+            if OldBV then
+              OldBV:Destroy()
+            end
+            HoldTarget = Target
+          end
+          if HoldConnection == nil then
+            HoldConnection = RunService.Heartbeat:Connect(function()
+              if not HoldTarget or not HoldTarget.Parent then
+                return
+              end
+              local BodyVelocity = HoldTarget:FindFirstChild("TweenBV")
+              if BodyVelocity == nil then
+                BodyVelocity = Instance.new("BodyVelocity")
+                BodyVelocity.Name = "TweenBV"
+                BodyVelocity.P = 10000
+                BodyVelocity.Parent = HoldTarget
+              end
+              BodyVelocity.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+              BodyVelocity.Velocity = Vector3.new(0, 0, 0)
+            end)
+          end
           local Time = (Position - Target.Position).Magnitude / StudsPS
           if Time <= 0 then
             return
@@ -30,27 +55,16 @@ function Module:TweenTo(Config)
             TweenInst = nil
             OldTween:Cancel()
           end
-          if TempInstance ~= nil and TempInstance.Parent ~= Target then
-            TempInstance:Destroy()
-            TempInstance = nil
-          end
           local ThisTween = TweenService:Create(
             Target,
             TweenInfo.new(Time, Enum.EasingStyle.Linear),
             Goal
           )
-          if TempInstance == nil then
-            local BodyVelocity = Instance.new("BodyVelocity")
-            BodyVelocity.Velocity = Vector3.new(0, 0, 0)
-            BodyVelocity.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
-            BodyVelocity.P = 10000
-            BodyVelocity.Parent = Target
-            TempInstance = BodyVelocity
-          end
           TweenInst = ThisTween
           TweenAc = true
           ThisTween.Completed:Connect(function()
             if TweenInst == ThisTween then
+              TweenInst = nil
               TweenAc = false
             end
           end)
@@ -65,17 +79,23 @@ function Module:StopTween()
   local ThisTween = TweenInst
   TweenInst = nil
   TweenAc = false
+  if HoldConnection then
+    HoldConnection:Disconnect()
+    HoldConnection = nil
+  end
+  if HoldTarget then
+    local BodyVelocity = HoldTarget:FindFirstChild("TweenBV")
+    if BodyVelocity then
+      BodyVelocity:Destroy()
+    end
+    HoldTarget = nil
+  end
   if ThisTween then
     ThisTween:Cancel()
-  end
-  if TempInstance ~= nil then
-    TempInstance:Destroy()
-    TempInstance = nil
   end
 end
 
 function Module:IsTweenAc()
   return TweenAc
 end
-
 return Module
