@@ -90,7 +90,7 @@ function Module:GetMon(MyLevel)
       MonCFrame = CFrame.new(-4827.93311, 25.3921242, 4274.28955, 0.534880698, -2.95744484e-10, -0.844927609, -3.3768941e-09, 1, -2.48776333e-09, 0.844927609, 4.18388746e-09, 0.534880698),
       MonName = "Chief Petty Officer"
     }
-  elseif MyLevel >= 150 then
+  elseif MyLevel >= 150 and MyLevel <= 174 then
     return {
       QuestName = "SkyQuest",
       QuestLevel = 1,
@@ -98,6 +98,15 @@ function Module:GetMon(MyLevel)
       QuestCFrame = CFrame.new(-5402.5625, 410.802032, -696.504333, -0.656015694, -5.43260725e-08, 0.754747272, -3.72416338e-08, 1, 3.96092545e-08, -0.754747272, -2.12372986e-09, -0.656015694),
       MonCFrame = CFrame.new(-5119.0459, 375.269836, -1089.03052, -0.99984628, -2.55593626e-08, 0.0175328515, -2.47454786e-08, 1, 4.6637421e-08, -0.0175328515, 4.61963943e-08, -0.99984628),
       MonName = "Sky Bandit"
+    }
+  elseif MyLevel >= 175 then
+    return {
+      QuestName = "SkyQuest",
+      QuestLevel = 2,
+      QuestTitle = "Defeat 8 Dark Masters",
+      QuestCFrame = CFrame.new(-5402.5625, 410.802032, -696.504333, -0.656015694, -5.43260725e-08, 0.754747272, -3.72416338e-08, 1, 3.96092545e-08, -0.754747272, -2.12372986e-09, -0.656015694),
+      MonCFrame = CFrame.new(-5399.53662, 510.711365, -279.90683, 0.567566276, -1.5923689e-08, -0.82332772, -1.15979903e-09, 1, -2.01401598e-08, 0.82332772, 1.23857697e-08, 0.567566276),
+      MonName = "Dark Master"
     }
   end
 end
