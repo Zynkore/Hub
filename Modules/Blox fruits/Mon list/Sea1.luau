@@ -81,7 +81,7 @@ function Module:GetMon(MyLevel)
       MonCFrame = CFrame.new(1204.96814, 111.984756, -1577.62793, 0.744608521, -7.05700529e-08, 0.66750145, 4.07791205e-08, 1, 6.02329422e-08, -0.66750145, -1.76298407e-08, 0.744608521),
       MonName = "Snowman"
     }
-  elseif MyLevel >= 120 then
+  elseif MyLevel >= 120 and MyLevel <= 149 then
     return {
       QuestName = "MarineQuest2",
       QuestLevel = 1,
@@ -89,6 +89,15 @@ function Module:GetMon(MyLevel)
       QuestCFrame = CFrame.new(-4698.49756, 5.95408297, 4223.32764, -0.984895825, 9.75294956e-10, 0.173147887, 1.73589931e-09, 1, 4.24137481e-09, -0.173147887, 4.4778794e-09, -0.984895825),
       MonCFrame = CFrame.new(-4827.93311, 25.3921242, 4274.28955, 0.534880698, -2.95744484e-10, -0.844927609, -3.3768941e-09, 1, -2.48776333e-09, 0.844927609, 4.18388746e-09, 0.534880698),
       MonName = "Chief Petty Officer"
+    }
+  elseif MyLevel >= 150 then
+    return {
+      QuestName = "",
+      QuestLevel = 1,
+      QuestTitle = "Defeat ",
+      QuestCFrame = CFrame.new(-5402.5625, 410.802032, -696.504333, -0.656015694, -5.43260725e-08, 0.754747272, -3.72416338e-08, 1, 3.96092545e-08, -0.754747272, -2.12372986e-09, -0.656015694),
+      MonCFrame = ,
+      MonName = ""
     }
   end
 end
