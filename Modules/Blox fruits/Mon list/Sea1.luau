@@ -65,12 +65,12 @@ function Module:GetMon(MyLevel)
     }
   elseif MyLevel >= 90 then
     return {
-      QuestName = "",
+      QuestName = "SnowQuest",
       QuestLevel = 1,
-      QuestTitle = "Defeat ",
+      QuestTitle = "Defeat 7 Snow Bandits",
       QuestCFrame = CFrame.new(1397.05127, 78.1017609, -1308.61316, 0.613278389, 6.19385716e-08, -0.789866865, -2.07908162e-08, 1, 6.22738057e-08, 0.789866865, -2.17691998e-08, 0.613278389),
-      MonCFrame = ,
-      MonName = ""
+      MonCFrame = CFrame.new(1409.28931, 98.235733, -1345.54419, 0.685011029, -6.11849416e-08, 0.728532732, 2.63858557e-09, 1, 8.15028329e-08, -0.728532732, -5.39080425e-08, 0.685011029),
+      MonName = "Snow Bandit"
     }
   end
 end
