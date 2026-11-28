@@ -63,7 +63,7 @@ function Module:GetMon(MyLevel)
       MonCFrame = CFrame.new(1604.82422, 32.2997437, 4084.09985, -0.695431113, 1.08753611e-08, 0.718592763, -2.8935343e-09, 1, -1.79345179e-08, -0.718592763, -1.45514951e-08, -0.695431113),
       MonName = "Desert Officer"
     }
-  elseif MyLevel >= 90 then
+  elseif MyLevel >= 90 and MyLevel <= 99 then
     return {
       QuestName = "SnowQuest",
       QuestLevel = 1,
@@ -71,6 +71,15 @@ function Module:GetMon(MyLevel)
       QuestCFrame = CFrame.new(1397.05127, 78.1017609, -1308.61316, 0.613278389, 6.19385716e-08, -0.789866865, -2.07908162e-08, 1, 6.22738057e-08, 0.789866865, -2.17691998e-08, 0.613278389),
       MonCFrame = CFrame.new(1409.28931, 98.235733, -1345.54419, 0.685011029, -6.11849416e-08, 0.728532732, 2.63858557e-09, 1, 8.15028329e-08, -0.728532732, -5.39080425e-08, 0.685011029),
       MonName = "Snow Bandit"
+    }
+  elseif MyLevel >= 100 then
+    return {
+      QuestName = "SnowQuest",
+      QuestLevel = 2,
+      QuestTitle = "Defeat 8 Snowmans",
+      QuestCFrame = CFrame.new(1397.05127, 78.1017609, -1308.61316, 0.613278389, 6.19385716e-08, -0.789866865, -2.07908162e-08, 1, 6.22738057e-08, 0.789866865, -2.17691998e-08, 0.613278389),
+      MonCFrame = CFrame.new(1194.50684, 105.596802, -1763.92651, -0.999789, -1.36337679e-08, -0.0205428656, -1.33759919e-08, 1, -1.26855948e-08, 0.0205428656, -1.24081367e-08, -0.999789),
+      MonName = "Snowman"
     }
   end
 end
